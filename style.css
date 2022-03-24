@@ -1,0 +1,138 @@
+/* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+.formSection {
+  /* height: 100vh; */
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  padding-bottom: 30px;
+  background-color: #edf2f7;
+}
+.formSection img.element-oval {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 400px;
+  width: 100%;
+  z-index: 0;
+}
+
+.formSection .imageforForm {
+  height: 400px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.formSection .image-form {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translateY(100%);
+  transition: 2s;
+}
+
+/* Animate Fade for People At Form Section */
+.formSection .image-form img {
+  position: absolute;
+  z-index: 2;
+  max-height: 350px;
+  opacity: 0;
+  overflow: hidden;
+  animation: animate 9s linear infinite 0s;
+}
+.formSection .image-form img:nth-child(1) {
+  animation-delay: 0s;
+}
+.formSection .image-form img:nth-child(2) {
+  animation-delay: 3s;
+}
+.formSection .image-form img:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0;
+  }
+}
+.formSection .image-form .background-form {
+  position: absolute;
+  border-radius: 10px;
+  z-index: 1;
+  height: 250px;
+  width: 220px;
+  background-color: #ffcf54;
+}
+.formSection .card-form {
+  box-shadow: -10px -10px 25px #f1f8ff, 10px 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: 2s;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  color: #2d3748;
+}
+.formSection .card-form h3:nth-child(1) {
+  font-weight: 800;
+}
+.formSection input,
+.formSection select {
+  border: 1px solid #ededed;
+  background-color: #f7fafc;
+  font-size: 12px;
+  padding: 7px 10px;
+  margin-top: 5px;
+}
+.formSection label {
+  color: #2d3748;
+  font-weight: 700;
+  font-size: 15px;
+}
+.formSection button {
+  color: #2d3748;
+  margin-top: 15px;
+}
+@media (min-width: 576px) {
+  .formSection .image-form .background-form {
+    height: 280px;
+    width: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .formSection {
+    padding: 50px;
+  }
+  .formSection .imageforForm {
+    height: auto;
+    margin-bottom: 0px;
+  }
+  .formSection .image-form img {
+    max-height: 540px;
+  }
+  .formSection .image-form .background-form {
+    height: 280px;
+    width: 230px;
+  }
+}
+@media (min-width: 992px) {
+  .formSection .image-form .background-form {
+    height: 350px;
+    width: 330px;
+  }
+}
