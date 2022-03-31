@@ -2,12 +2,10 @@
 /* ----------------------------------------------------------------------------------------------------------- */
 
 .formSection {
-  /* height: 100vh; */
   font-family: "Open Sans", sans-serif;
   position: relative;
   overflow: hidden;
-  padding: 10px;
-  padding-bottom: 30px;
+  padding: 65px 0px;
   background-color: #edf2f7;
 }
 .formSection img.element-oval {
@@ -18,21 +16,6 @@
   max-height: 400px;
   width: 100%;
   z-index: 0;
-}
-
-.formSection .imageforForm {
-  height: 400px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-.formSection .image-form {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  transform: translateY(100%);
-  transition: 2s;
 }
 
 /* Animate Fade for People At Form Section */
@@ -71,14 +54,7 @@
     opacity: 0;
   }
 }
-.formSection .image-form .background-form {
-  position: absolute;
-  border-radius: 10px;
-  z-index: 1;
-  height: 250px;
-  width: 220px;
-  background-color: #ffcf54;
-}
+
 .formSection .card-form {
   box-shadow: -10px -10px 25px #f1f8ff, 10px 10px 15px rgba(0, 0, 0, 0.1);
   transform: translateX(100%);
@@ -102,10 +78,11 @@
 .formSection label {
   color: #2d3748;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
 }
 .formSection button {
   color: #2d3748;
+  font-weight: 600;
   margin-top: 15px;
 }
 @media (min-width: 576px) {
@@ -118,22 +95,67 @@
   .formSection {
     padding: 50px;
   }
-  .formSection .imageforForm {
-    height: auto;
-    margin-bottom: 0px;
-  }
-  .formSection .image-form img {
-    max-height: 540px;
-  }
-  .formSection .image-form .background-form {
-    height: 280px;
-    width: 230px;
-    border-radius: 20px;
+  .formSection label {
+    font-size: 16px;
   }
 }
 @media (min-width: 992px) {
+  .formSection label {
+    font-size: 13px;
+  }
+  .formSection .image-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transform: translateY(100%);
+    transition: 2s;
+  }
+
+  .formSection .image-form img {
+    max-height: 480px;
+    bottom: 10%;
+  }
+  .formSection .image-form img:nth-child(1) {
+    transform: translateX(10%);
+  }
   .formSection .image-form .background-form {
-    height: 350px;
+    position: absolute;
+    z-index: 1;
+    background-color: #ffcf54;
+    height: 360px;
+    width: 315px;
+    bottom: 10%;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .formSection .image-form img {
+    max-height: 500px;
+  }
+  .formSection .image-form .background-form {
+    height: 370px;
     width: 330px;
+  }
+  .formSection {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  .formSection label {
+    font-size: 17px;
+  }
+  .formSection .image-form img {
+    max-height: 550px;
+    bottom: 8%;
+  }
+  .formSection .image-form .background-form {
+    bottom: 8%;
+  }
+  .formSection button {
+    font-size: 16px;
   }
 }
