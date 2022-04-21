@@ -37,12 +37,7 @@ const buttonSliderNext = document.querySelector("button.slider-next");
 const buttonSliderPrevious = document.querySelector("button.slider-previous");
 const sliderIndicator = document.querySelectorAll(".indicator-slider button");
 
-const blogSliderNext = document.querySelector(".blog button.slider-next");
-const blogSliderPrevious = document.querySelector(".blog button.slider-previous");
-const blogIndicator = document.querySelectorAll(".indicator-slider-blog button");
-
 let width = document.querySelector(".slider-items.active").offsetWidth;
-let widthBlog = document.querySelector(".card.active").offsetWidth;
 
 let i = 0;
 
@@ -56,20 +51,6 @@ buttonSliderNext.addEventListener("click", function () {
   indicatorActive(nilai, sliderIndicator);
 
   sliderItems.forEach((el) => {
-    el.style.transform = `translateX(-${i}px)`;
-  });
-});
-
-blogSliderNext.addEventListener("click", function () {
-  if (i + widthBlog >= widthBlog * 3) {
-    i = 0;
-  } else {
-    i = i + widthBlog + 45;
-  }
-  let nilai = i / (widthBlog + 45);
-  indicatorActive(nilai, blogIndicator);
-
-  card.forEach((el) => {
     el.style.transform = `translateX(-${i}px)`;
   });
 });
@@ -88,34 +69,12 @@ buttonSliderPrevious.addEventListener("click", function () {
   });
 });
 
-blogSliderPrevious.addEventListener("click", function () {
-  if (i === 0) {
-    i = (widthBlog + 45) * 2;
-  } else {
-    i = i - (widthBlog + 45);
-  }
-  let nilai = i / (widthBlog + 45);
-  indicatorActive(nilai, blogIndicator);
-  card.forEach((el) => {
-    el.style.transform = `translateX(-${i}px)`;
-  });
-});
-
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("indicator-button")) {
     let nilai = e.target.getAttribute("indeks");
     i = +nilai * (width + 45);
     indicatorActive(+nilai, sliderIndicator);
     sliderItems.forEach((el) => {
-      el.style.transform = `translateX(-${i}px)`;
-    });
-  }
-
-  if (e.target.classList.contains("indicator-button-blog")) {
-    let nilai = e.target.getAttribute("indeks");
-    i = +nilai * (widthBlog + 45);
-    indicatorActive(+nilai, blogIndicator);
-    card.forEach((el) => {
       el.style.transform = `translateX(-${i}px)`;
     });
   }
@@ -128,3 +87,28 @@ function indicatorActive(params, element) {
 
   element[params].classList.add("btn-warning");
 }
+
+//--------------------------------------------------------------------------
+// JAVASCRIPT FOR BLOG
+function textCutter(element) {
+  let cardTeks = [];
+  element.forEach((el) => {
+    cardTeks.push(el.textContent.substring(0, 180));
+  });
+  document.querySelectorAll(".card .card-text").forEach((el, i) => {
+    el.innerHTML = `${cardTeks[i]}...`;
+  });
+}
+const cardText = document.querySelectorAll(".card .card-text");
+textCutter(cardText);
+//--------------------------------------------------------------------------
+
+const sliderCard = document.querySelector(".choose .slider .board-slider");
+const sliderCardItems = document.querySelectorAll(".choose .slider .board-slider .slider-items");
+var rectangle = sliderCardItems[0].getBoundingClientRect();
+let x = 0;
+var style = sliderCardItems[0].currentStyle || window.getComputedStyle(sliderCardItems[0]);
+sliderCard.addEventListener("scroll", function () {
+  console.log(style.marginRight);
+  console.log(window.scrollX);
+});

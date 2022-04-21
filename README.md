@@ -4,15 +4,11 @@
 
 <hr/>
 
-#### info
+#### BAGIAN BLOG SECTION
 
-Karna Section Footer Menggunakan z-index : 0
-
-- hal ini disebabkan footer menyimpan tag a, dimana apabila diletakan -1 maka tag a tidak bisa digunakan/diklik
-
-maka jangan lupa menambahkan untuk semua section class diatasnya wajib menggunakan
-<strong>z-index: 1; position : relative</strong>
-Agar footer tetap berada dipaling bawah dari semua layer
+Blog Section HTML line 96 - 145
+Blog Section CSS line 470 - 705
+Blog Section Javascript 91 - 104
 
 ##### Terimakasih
 
