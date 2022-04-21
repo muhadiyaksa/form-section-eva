@@ -93,7 +93,7 @@ function indicatorActive(params, element) {
 function textCutter(element) {
   let cardTeks = [];
   element.forEach((el) => {
-    cardTeks.push(el.textContent.substring(0, 180));
+    cardTeks.push(el.textContent.substring(0, 200));
   });
   document.querySelectorAll(".card .card-text").forEach((el, i) => {
     el.innerHTML = `${cardTeks[i]}...`;
@@ -109,6 +109,12 @@ var rectangle = sliderCardItems[0].getBoundingClientRect();
 let x = 0;
 var style = sliderCardItems[0].currentStyle || window.getComputedStyle(sliderCardItems[0]);
 sliderCard.addEventListener("scroll", function () {
-  console.log(style.marginRight);
-  console.log(window.scrollX);
+  let x = sliderCard.scrollLeft;
+  console.log(Math.floor(rectangle.width));
+  console.log(x);
+});
+
+document.addEventListener("scroll", function () {
+  let x = window.scrollY;
+  console.log(x);
 });
