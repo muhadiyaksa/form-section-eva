@@ -1,4 +1,4 @@
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 // const imageFormPoint = document.querySelector(".imageforForm");
 // const imageForm = document.querySelector(".image-form");
@@ -34,8 +34,21 @@
 // }
 
 if (window.matchMedia("(min-width: 992px)").matches) {
+  const tl5 = gsap.timeline();
+  tl5.fromTo(".formSection .imageforForm", { y: 500 }, { y: 0 }).fromTo(".formSection .cardforForm", { x: 1000 }, { x: 0 }, "<");
+
+  ScrollTrigger.create({
+    animation: tl5,
+    trigger: ".formSection",
+    start: "top center",
+    end: "top center",
+    toggleActions: "play none none none",
+    scrub: 1,
+    // markers: true,
+  });
+
   const tl = gsap.timeline();
-  tl.fromTo(".choose .header-choose", { x: 500 }, { x: 0, duration: 2 })
+  tl.fromTo(".choose .header-choose ", { x: 500 }, { x: 0, duration: 2 })
     .fromTo(".choose .slider", { opacity: 0 }, { opacity: 1, duration: 2 })
     .fromTo(".choose .board-slider", { opacity: 0 }, { opacity: 1, duration: 2 })
     .fromTo(".choose .button", { opacity: 0 }, { opacity: 1, duration: 2 });
@@ -51,10 +64,10 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 
   const tlBlog = gsap.timeline();
   tlBlog
-    .fromTo(".blog .judul h1", { opacity: 0 }, { opacity: 1, duration: 5 })
-    .fromTo(".blog .judul p", { opacity: 0 }, { opacity: 1, duration: 5 })
-    .fromTo(".blog .slider-blog", { opacity: 0 }, { opacity: 1, duration: 5 })
-    .fromTo(".blog .button", { opacity: 0 }, { opacity: 1, duration: 5 });
+    .fromTo(".blog .judul h1", { opacity: 0 }, { opacity: 1, duration: 3 })
+    .fromTo(".blog .judul p", { opacity: 0 }, { opacity: 1, duration: 3 })
+    .fromTo(".blog .slider-blog", { opacity: 0 }, { opacity: 1, duration: 3 })
+    .fromTo(".blog .button", { opacity: 0 }, { opacity: 1, duration: 3 });
 
   ScrollTrigger.create({
     animation: tlBlog,

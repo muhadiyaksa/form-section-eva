@@ -37,7 +37,7 @@
   top: 0;
   left: 0;
   width: 600px;
-  font-weight: 800;
+  font-weight: 900;
   color: #2b2b29;
 }
 .choose .header-choose h1:nth-child(1) {
@@ -345,7 +345,7 @@
     margin-bottom: 0px;
   }
   .choose .header-choose h1 {
-    font-size: 34px;
+    font-size: 36px;
     width: 520px;
     margin-top: 55px;
   }
@@ -396,12 +396,12 @@
     border-radius: 10px;
     margin-top: 0px;
     width: 260px;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
   .choose .header-choose h1 {
-    font-size: 38px;
+    font-size: 40px;
   }
   .choose .slider {
     height: 330px;
@@ -434,17 +434,19 @@
   }
   .choose .button a {
     width: 300px;
-    height: 48px;
+    height: 52px;
     margin-top: 0px;
-    border-radius: 12px;
+    font-size: 15px;
+    border-radius: 11px;
   }
 }
 @media (min-width: 1400px) {
   .choose .header-choose h1 {
-    font-size: 42px;
-    width: 600px;
+    font-size: 56px;
+    width: 800px;
   }
   .choose .slider {
+    padding-top: 50px;
     height: 390px;
   }
   .choose .slider .board-slider {
@@ -479,7 +481,7 @@
   .choose .button a {
     margin-top: 24px;
     width: 380px;
-    height: 60px;
+    height: 70px;
     font-size: 20px;
   }
 }
@@ -559,6 +561,7 @@
 }
 .blog .button a {
   width: 90%;
+  font-size: 14px;
   border-radius: 9px;
 }
 
@@ -586,7 +589,7 @@
     font-size: 17px;
   }
   .blog .button a {
-    width: 280px;
+    width: 80%;
   }
 }
 @media (min-width: 576px) {
@@ -617,6 +620,10 @@
   .blog .card .card-text {
     font-size: 14px;
   }
+  .blog .button a {
+    width: 320px;
+    font-size: 14px;
+  }
 }
 @media (min-width: 768px) {
   .blog .slider-blog {
@@ -636,7 +643,8 @@
     height: 100%;
   }
   .blog .button a {
-    width: 380px;
+    width: 360px;
+    font-size: 14px;
   }
 }
 @media (min-width: 992px) {
@@ -665,7 +673,10 @@
   }
 
   .blog .button a {
-    padding: 8px 0px;
+    width: 275px;
+    border-radius: 12px;
+    padding: 3px 0px;
+    font-size: 15px;
   }
 
   .blog .slider-blog .board-slider-blog .card.center {
@@ -714,15 +725,19 @@
   .blog .card .card-link {
     font-size: 11px;
   }
+  .blog .button a {
+    font-size: 16px;
+    padding: 7px 0px;
+    width: 330px;
+  }
 }
 @media (min-width: 1400px) {
   .blog .judul h1 {
-    font-size: 54px;
+    font-size: 56px;
   }
   .blog .judul p {
     margin-top: 38px !important;
     margin-bottom: 19px !important;
-    font-size: 24px;
   }
   .blog .slider-blog .board-slider-blog .card img {
     /* min-height: 220px; */
@@ -746,21 +761,24 @@
   .blog .card .card-link {
     font-size: 12px;
   }
+  .blog .button a {
+    width: 380px;
+    padding: 10px;
+    font-size: 18px;
+  }
 }
 
 /* ----------------------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------------------- */
-/* ------FORM SECTION--------------------------FORM SECTION-----------------------------------FORM SECTION---- */
+/* ------FORM SECTION--------------------------FORM SECTION-----------------------------FORM SECTION---------- */
 /* ----------------------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------------------- */
-body {
-  position: relative;
-}
+
 .formSection {
-  font-family: "Open Sans", sans-serif;
   position: relative;
   background-color: #edf2f7;
   z-index: 1;
+  font-family: "Inter", sans-serif;
 }
 .formSection::after {
   content: "";
@@ -772,6 +790,13 @@ body {
   border-radius: 0px 0px 30px 30px;
   background-color: #edf2f7;
   width: 100%;
+}
+.formSection .back-button {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  z-index: 8;
 }
 .formSection .formContent {
   padding: 65px 0px;
@@ -802,16 +827,16 @@ body {
   max-height: 350px;
   opacity: 0;
   overflow: hidden;
-  animation: animate 9s linear infinite 0s;
+  animation: animate 15s linear infinite 0s;
 }
 .formSection .image-form img:nth-child(1) {
   animation-delay: 0s;
 }
 .formSection .image-form img:nth-child(2) {
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 .formSection .image-form img:nth-child(3) {
-  animation-delay: 6s;
+  animation-delay: 10s;
 }
 
 @-webkit-keyframes animate {
@@ -834,15 +859,17 @@ body {
 
 .formSection .card-form {
   box-shadow: -10px -10px 25px #f1f8ff, 10px 10px 15px rgba(0, 0, 0, 0.1);
-  /* transform: translateX(100%); */
   transition: 2s;
   background-color: white;
   border-radius: 20px;
-  padding: 30px;
+  padding: 35px 30px;
   color: #2d3748;
 }
 .formSection .card-form h3:nth-child(1) {
   font-weight: 800;
+}
+.formSection .card-form h3:nth-child(1) span {
+  color: #ffc42f;
 }
 
 .formSection input,
@@ -896,6 +923,13 @@ body {
 @media (min-width: 992px) {
   .formSection {
     margin-bottom: 140vh;
+  }
+  .formSection .card-form h3:nth-child(1) {
+    font-weight: 900;
+    font-size: 24px;
+  }
+  .formSection .back-button {
+    bottom: -85px;
   }
   .formSection label {
     font-size: 13px;
@@ -956,7 +990,7 @@ body {
     font-size: 13px;
   }
   .formSection label {
-    font-size: 17px;
+    font-size: 18px;
   }
   .formSection .image-form img {
     max-height: 550px;
@@ -967,6 +1001,9 @@ body {
   }
   .formSection button {
     font-size: 16px;
+  }
+  .formSection h3 {
+    font-size: 32px;
   }
 }
 /* ----------------------------------------------------------------------------------------------------------- */
